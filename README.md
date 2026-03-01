@@ -4,6 +4,13 @@ Here's some quick notes for building, testing and deploying JUDDI from source.
 
 See our website at https://juddi.apache.org 
 
+# NOTE
+
+As of 03/01/2026 this fork contains the necessary changes to support building juddi on Java 17.
+Look for more changes to come as we work on modernizing juddi with an eye towards possibly morphing the
+code into a more general purpose service/agent registry suitable for many uses, not just for WSDL / SOAP-based
+Web Services.
+
 # NOTICE
 
 December 2023 - Apache jUDDI discussed potentially retiring the project.
