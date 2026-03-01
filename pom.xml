@@ -196,7 +196,7 @@ under the License.
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-war-plugin</artifactId>
-					<version>2.4</version>
+					<version>3.5.1</version>
 				</plugin>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
@@ -206,9 +206,20 @@ under the License.
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-compiler-plugin</artifactId>
-					<configuration>
-						<source>1.7</source>
-						<target>1.7</target>
+                                        <version>3.10.1</version>
+                                        <configuration>
+                                          <source>17</source>
+                                          <target>17</target>
+                                          <compilerArgs>
+                                              <arg>--add-exports</arg>
+                                              <arg>java.base/jdk.internal.misc=ALL-UNNAMED</arg>
+                                              <arg>--add-exports</arg>
+                                              <arg>java.base/sun.security.provider.certpath=ALL-UNNAMED</arg>
+                                              <arg>--add-exports</arg>
+                                              <arg>java.base/sun.security.x509=ALL-UNNAMED</arg>
+                                              <arg>--add-exports</arg>
+                                              <arg>java.base/java.util=ALL-UNNAMED</arg>
+                                          </compilerArgs>
 					</configuration>
 				</plugin>
 				<plugin>
@@ -226,7 +237,8 @@ under the License.
 				<plugin>
 					<groupId>org.apache.felix</groupId>
 					<artifactId>maven-bundle-plugin</artifactId>
-					<version>2.3.6</version>
+					<!-- <version>2.3.6</version> -->
+                                        <version>6.0.0</version>
 					<extensions>true</extensions>
 					<configuration>
 						<classifier>${envClassifier}</classifier>
@@ -590,6 +602,25 @@ under the License.
 			<artifactId>junit</artifactId>
 			<scope>test</scope>
 		</dependency>
+<dependency>
+    <groupId>com.sun.xml.ws</groupId>
+    <artifactId>jaxws-ri</artifactId>
+    <version>2.3.3</version>
+    <type>pom</type>
+</dependency>
+    <!-- JAXB API -->
+    <dependency>
+        <groupId>javax.xml.bind</groupId>
+        <artifactId>jaxb-api</artifactId>
+        <version>2.3.1</version>
+    </dependency>
+    <!-- JAXB Implementation -->
+    <dependency>
+        <groupId>org.glassfish.jaxb</groupId>
+        <artifactId>jaxb-runtime</artifactId>
+        <version>2.3.1</version>
+    </dependency>
+                
 		<dependency>
 			<groupId>commons-logging</groupId>
 			<artifactId>commons-logging-api</artifactId>

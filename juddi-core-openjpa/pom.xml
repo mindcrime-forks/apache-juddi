@@ -29,6 +29,9 @@
     <description>This module enhances the JPA Entity classes from the juddi-core and reruns the same tests using
         OpenJPA.
     </description>
+    <properties>
+      <maven.compiler.target>17</maven.compiler.target>
+    </properties>
     <build>
         <sourceDirectory>../juddi-core/src/main/java</sourceDirectory>
         <testSourceDirectory>../juddi-core/src/test/java</testSourceDirectory>
@@ -41,7 +44,7 @@
             <plugin>
                 <groupId>org.apache.felix</groupId>
                 <artifactId>maven-bundle-plugin</artifactId>
-                <version>1.4.0</version>
+                <version>6.0.0</version>
                 <configuration>
                     <instructions>
                         <Export-Package>org.apache.juddi, org.apache.juddi.api, org.apache.juddi.api.impl,
@@ -62,7 +65,8 @@
             <plugin>
                 <groupId>org.apache.openjpa</groupId>
                 <artifactId>openjpa-maven-plugin</artifactId>
-                <version>3.1.0</version>
+                <!-- <version>3.1.0</version> -->
+                <version>4.1.1</version>
                 <configuration>
                     <includes>**/org/apache/juddi/model/*.class</includes>
                     <addDefaultConstructor>true</addDefaultConstructor>
@@ -82,7 +86,7 @@
                     <dependency>
                         <groupId>org.apache.openjpa</groupId>
                         <artifactId>openjpa</artifactId>
-                        <version>3.1.0</version>
+                        <version>4.1.1</version>
                     </dependency>
                 </dependencies>
             </plugin>
